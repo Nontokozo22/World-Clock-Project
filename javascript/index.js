@@ -20,8 +20,8 @@ let nairobiDatElement = nairobiElement.querySelector(".date");
 let nairobiTimeElement = nairobiElement.querySelector(".time");
 
 
-nairobiDatElement.innerHTML = moment().tz("Asia/Jerusalem").format("MMMM Do YYYY")
-nairobiTimeElement.innerHTML = moment().tz("Asia/Jerusalem").format("H:mm:ss [<small>]a[</small>]")
+nairobiDatElement.innerHTML = moment().tz("Africa/Nairobi").format("MMMM Do YYYY")
+nairobiTimeElement.innerHTML = moment().tz("Africa/Nairobi").format("H:mm:ss [<small>]a[</small>]")
 
 let jamaicaElement = document.querySelector("#jamaica");
 let jamaicaDatElement = jamaicaElement.querySelector(".date");
@@ -31,5 +31,25 @@ let jamaicaTimeElement = jamaicaElement.querySelector(".time");
 jamaicaDatElement.innerHTML = moment().tz("America/Jamaica").format("MMMM Do YYYY")
 jamaicaTimeElement.innerHTML = moment().tz("America/Jamaica").format("H:mm:ss [<small>]a[</small>]")
 }
+
+
+
+function updateCity(event){
+let cityTimeZone = event.target.value;
+let cityTime = moment().tz(cityTimeZone);
+let citiesElement = document.querySelector("#cities");
+citiesElement.innerHTML = `
+<div class="city">
+    <div>
+        <p>${cityTimeZone}</p>
+     <div class="date">${cityTime.format("MMM Do YYYY")}</div>
+    </div>
+    <div class="time">${cityTime.format("H:mm:ss")}<small>${cityTime.format("A")}</small></div>
+  </div>
+  `;
+}
 updateTime();
 setInterval(updateTime, 1);
+let citiesSelect = document.querySelector("#cities");
+
+citiesSelect.addEventListener("change", updateCity)
