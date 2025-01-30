@@ -1,5 +1,35 @@
+function updateTime(){
 let brisbaneElement = document.querySelector("#brisbane");
 let brisbaneDatElement = brisbaneElement.querySelector(".date");
 let brisbaneTimeElement = brisbaneElement.querySelector(".time");
 
-brisbaneDatElement.innerHTML = moment().format("dddd")
+
+brisbaneDatElement.innerHTML = moment().tz("Australia/Brisbane").format("MMMM Do YYYY")
+brisbaneTimeElement.innerHTML = moment().tz("Australia/Brisbane").format("H:mm:ss [<small>]a[</small>]")
+
+let jerusalemElement = document.querySelector("#jerusalem");
+let jerusalemDatElement = jerusalemElement.querySelector(".date");
+let jerusalemTimeElement = jerusalemElement.querySelector(".time");
+
+
+jerusalemDatElement.innerHTML = moment().tz("Asia/Jerusalem").format("MMMM Do YYYY")
+jerusalemTimeElement.innerHTML = moment().tz("Asia/Jerusalem").format("H:mm:ss [<small>]a[</small>]")
+
+let nairobiElement = document.querySelector("#nairobi");
+let nairobiDatElement = nairobiElement.querySelector(".date");
+let nairobiTimeElement = nairobiElement.querySelector(".time");
+
+
+nairobiDatElement.innerHTML = moment().tz("Asia/Jerusalem").format("MMMM Do YYYY")
+nairobiTimeElement.innerHTML = moment().tz("Asia/Jerusalem").format("H:mm:ss [<small>]a[</small>]")
+
+let jamaicaElement = document.querySelector("#jamaica");
+let jamaicaDatElement = jamaicaElement.querySelector(".date");
+let jamaicaTimeElement = jamaicaElement.querySelector(".time");
+
+
+jamaicaDatElement.innerHTML = moment().tz("America/Jamaica").format("MMMM Do YYYY")
+jamaicaTimeElement.innerHTML = moment().tz("America/Jamaica").format("H:mm:ss [<small>]a[</small>]")
+}
+updateTime();
+setInterval(updateTime, 1);
