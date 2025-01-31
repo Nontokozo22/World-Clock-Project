@@ -66,3 +66,14 @@ setInterval(updateTime, 1);
 let citiesSelect = document.querySelector("#city");
 citiesSelect.addEventListener("change", updateCity);
 
+function changeTheme() {
+  let body = document.querySelector("body");
+
+  if (body.classList.contains("darker")) {
+    body.classList.remove("darker");
+  } else {
+    body.classList.add("darker");
+  }
+}
+let theme = document.querySelector(".theme-button");
+theme.addEventListener("click", changeTheme);
