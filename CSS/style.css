@@ -2,6 +2,7 @@ body{
     text-align: center;
     background-color: #f9f7fe;
     font-family: sans-serif;
+    
 }
 .theme-button{
     border-radius: 10px;
@@ -26,6 +27,7 @@ body{
   max-width: 600px; 
   margin: 40px auto;
   box-shadow: 6px 5px 5px rgba(0,0,0, 0.1);
+  opacity: 0.5px;
 }
 select{
     width: 100%;
