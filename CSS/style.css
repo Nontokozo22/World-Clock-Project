@@ -7,6 +7,7 @@ body{
     border-radius: 10px;
     padding: 6px;
     border-color: white;
+    margin: 20px 0 0 0;
 
 }
 .darker {
@@ -23,7 +24,7 @@ body{
   background-color: white;
   padding: 30px;
   max-width: 600px; 
-  margin: 60px auto;
+  margin: 40px auto;
   box-shadow: 6px 5px 5px rgba(0,0,0, 0.1);
 }
 select{
